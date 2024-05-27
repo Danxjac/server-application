@@ -1,0 +1,18 @@
+# station-name,longitude,latitude
+TerminalE,115.9900,-31.5300
+
+# departure-time,route-name,departing-from,arrival-time,arrival-station
+06:01,busE_F,stopE,06:22,JunctionF
+07:08,busE_F,stopE,07:28,JunctionF
+08:10,busE_F,stopE,08:30,JunctionF
+09:14,busE_F,stopE,09:34,JunctionF
+10:20,busE_F,stopE,10:42,JunctionF
+11:27,busE_F,stopE,11:49,JunctionF
+12:34,busE_F,stopE,12:56,JunctionF
+13:42,busE_F,stopE,14:02,JunctionF
+14:45,busE_F,stopE,15:05,JunctionF
+15:51,busE_F,stopE,16:11,JunctionF
+16:55,busE_F,stopE,17:16,JunctionF
+18:01,busE_F,stopE,18:23,JunctionF
+19:06,busE_F,stopE,19:28,JunctionF
+20:10,busE_F,stopE,20:32,JunctionF

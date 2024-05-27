@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timetable</title>
+  <style>
+    body {
+      background-image: url('https://images.assetsdelivery.com/compings_v2/zoaarts/zoaarts1810/zoaarts181000012.jpg');
+      background-repeat: repeat;
+    }
+    div.box {
+      margin: 1em;
+      width: 30em;
+      border-radius: 6px;
+      border: 1px solid gray;
+      background-color: honeydew;
+      padding: 0.4em;
+    }
+    .result-box {
+      margin: 1em;
+      width: 30em;
+      border-radius: 6px;
+      border: 1px solid gray;
+      background-color: lightyellow;
+      padding: 0.4em;
+      display: none;
+    }
+  </style>
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const currentTime = `${hours}:${minutes}`;
+      document.getElementById('current-time').textContent = currentTime;
+      const hiddenInputs = document.querySelectorAll('input[name="leave"]');
+      hiddenInputs.forEach(input => input.value = currentTime);
+    }
+
+    window.onload = updateTime;
+  </script>
+</head>
+<body>
+
+  <div class="box">
+    <h3>&nbsp;Leaving after <span id="current-time" style="color: black;"></span></h3>
+  </div>
+
+  <div class="box">
+    <form action="http://localhost:4005/" method="get">
+      <table>
+        <tr>
+          <td style="text-align: right;">Leaving from:</td>
+          <td style="text-align: left;">&nbsp;<b>BusportC</b></td>
+          <td style="padding-left: 3em;"><i>http://localhost:4005/</i></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Destination:</label></td>
+          <td>
+            <select name="to">
+              <option value="JunctionB">JunctionB</option>
+              <option value="JunctionF">JunctionF</option>
+              <option value="StationD">StationD</option>
+              <option value="TerminalA">TerminalA</option>
+              <option value="TerminalE">TerminalE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Leave after:</label></td>
+          <td>
+            <input type="time" name="leave">
+          </td>
+          <td style="padding-left: 3em;"><input type="submit" value=" Let's go! "></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="box">
+    <form action="http://localhost:4003/" method="get">
+      <table>
+        <tr>
+          <td style="text-align: right;">Leaving from:</td>
+          <td style="text-align: left;">&nbsp;<b>JunctionB</b></td>
+          <td style="padding-left: 3em;"><i>http://localhost:4003/</i></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Destination:</label></td>
+          <td>
+            <select name="to">
+              <option value="BusportC">BusportC</option>
+              <option value="JunctionF">JunctionF</option>
+              <option value="StationD">StationD</option>
+              <option value="TerminalA">TerminalA</option>
+              <option value="TerminalE">TerminalE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Leave after:</label></td>
+          <td>
+            <input type="time" name="leave">
+          </td>
+          <td style="padding-left: 3em;"><input type="submit" value=" Let's go! "></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="box">
+    <form action="http://localhost:4011/" method="get">
+      <table>
+        <tr>
+          <td style="text-align: right;">Leaving from:</td>
+          <td style="text-align: left;">&nbsp;<b>JunctionF</b></td>
+          <td style="padding-left: 3em;"><i>http://localhost:4011/</i></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Destination:</label></td>
+          <td>
+            <select name="to">
+              <option value="BusportC">BusportC</option>
+              <option value="JunctionB">JunctionB</option>
+              <option value="StationD">StationD</option>
+              <option value="TerminalA">TerminalA</option>
+              <option value="TerminalE">TerminalE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Leave after:</label></td>
+          <td>
+            <input type="time" name="leave">
+          </td>
+          <td style="padding-left: 3em;"><input type="submit" value=" Let's go! "></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="box">
+    <form action="http://localhost:4007/" method="get">
+      <table>
+        <tr>
+          <td style="text-align: right;">Leaving from:</td>
+          <td style="text-align: left;">&nbsp;<b>StationD</b></td>
+          <td style="padding-left: 3em;"><i>http://localhost:4007/</i></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Destination:</label></td>
+          <td>
+            <select name="to">
+              <option value="BusportC">BusportC</option>
+              <option value="JunctionB">JunctionB</option>
+              <option value="JunctionF">JunctionF</option>
+              <option value="TerminalA">TerminalA</option>
+              <option value="TerminalE">TerminalE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Leave after:</label></td>
+          <td>
+            <input type="time" name="leave">
+          </td>
+          <td style="padding-left: 3em;"><input type="submit" value=" Let's go! "></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="box">
+    <form action="http://localhost:4001/" method="get">
+      <table>
+        <tr>
+          <td style="text-align: right;">Leaving from:</td>
+          <td style="text-align: left;">&nbsp;<b>TerminalA</b></td>
+          <td style="padding-left: 3em;"><i>http://localhost:4001/</i></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Destination:</label></td>
+          <td>
+            <select name="to">
+              <option value="BusportC">BusportC</option>
+              <option value="JunctionB">JunctionB</option>
+              <option value="JunctionF">JunctionF</option>
+              <option value="StationD">StationD</option>
+              <option value="TerminalE">TerminalE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Leave after:</label></td>
+          <td>
+            <input type="time" name="leave">
+          </td>
+          <td style="padding-left: 3em;"><input type="submit" value=" Let's go! "></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="box">
+    <form action="http://localhost:4009/" method="get">
+      <table>
+        <tr>
+          <td style="text-align: right;">Leaving from:</td>
+          <td style="text-align: left;">&nbsp;<b>TerminalE</b></td>
+          <td style="padding-left: 3em;"><i>http://localhost:4009/</i></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Destination:</label></td>
+          <td>
+            <select name="to">
+              <option value="BusportC">BusportC</option>
+              <option value="JunctionB">JunctionB</option>
+              <option value="JunctionF">JunctionF</option>
+              <option value="StationD">StationD</option>
+              <option value="TerminalA">TerminalA</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><label>Leave after:</label></td>
+          <td>
+            <input type="time" name="leave">
+          </td>
+          <td style="padding-left: 3em;"><input type="submit" value=" Let's go! "></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+</body>
+</html>
